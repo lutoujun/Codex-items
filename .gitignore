@@ -5,4 +5,5 @@ _generated/
 graphify-out/
 _tools/
 .superpowers/
+.worktrees/
 tmp/
