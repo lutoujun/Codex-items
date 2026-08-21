@@ -1,3 +1,8 @@
+---
+description: 数据团队 AI 协作 SOP，供任务拆解、协作交接与提示词复用时参考
+alwaysApply: false
+---
+
 # 数据团队 AI 协作 SOP
 
 适用范围：数据报表设计、指标口径、数仓/大数据开发、SQL 与 Shell/Python 脚本、数据验证、上线验收、任务拆分与组员协作。

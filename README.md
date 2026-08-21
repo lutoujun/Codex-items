@@ -25,4 +25,4 @@
 
 详细归属见 [FILE_MANIFEST.md](FILE_MANIFEST.md)。
 
-团队使用 AI 的统一流程见 [AI_DATA_WORKFLOW.md](docs/AI_DATA_WORKFLOW.md)。
+团队 AI 协作 SOP 已收敛至 [06-ai-data-workflow.mdc](.codex/cursor-rules/06-ai-data-workflow.mdc)。
