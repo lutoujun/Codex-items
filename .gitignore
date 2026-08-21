@@ -1,5 +1,6 @@
 .codex/config.toml
 __pycache__/
+.pytest_cache/
 _generated/
 graphify-out/
 _tools/
