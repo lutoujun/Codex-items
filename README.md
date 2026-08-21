@@ -4,7 +4,6 @@
 
 ## 项目入口
 
-- `projects/supply-chain-stock/`：供应链库存分析滚动计算。
 - `projects/finance-ca-profit/`：CA 利润月报逻辑、SQL 与核验材料。
 
 ## 目录约定

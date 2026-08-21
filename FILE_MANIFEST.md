@@ -6,7 +6,6 @@
 | --- | --- | --- |
 | `.codex/` | 工作台配置 | Codex 规则与本地配置，保留根目录。 |
 | `AGENTS.md` | 工作台规范 | 全局协作与数据开发约束。 |
-| `projects/supply-chain-stock/` | 业务项目 | 供应链库存分析滚动计算。 |
 | `projects/finance-ca-profit/` | 业务项目 | CA 利润月报逻辑与核验材料。 |
 | `docs/superpowers/specs/` | 全局设计文档 | 既有 MCP SQL 审计设计文档。 |
 | `_tools/` | 第三方工具 | Graphify 和 Superpowers 的本地工具源码。 |
