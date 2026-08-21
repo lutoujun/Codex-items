@@ -1,0 +1,223 @@
+---
+description: 数仓 SHELL+SQL 书写规范（基于 ads_bi_boston_matrix_analyse_info.sh 提炼），DWE/DVT 产出 .sh/.sql 时强制遵守
+globs: **/*.sh,**/*.sql
+alwaysApply: false
+---
+
+# 数仓 SQL 书写规范（可读性优先）
+
+> 样例基准：`E:\jamf-data-warehouse\jamf-warehouse\ads\ads_bi_boston_matrix_analyse_info.sh`
+> 目标：字段整齐、注释在行末、层级清晰、可直接照抄的团队统一风格。
+
+## 一、字段与注释
+
+1. **注释一律放在字段行末**，禁止在 SELECT 字段列表中间插入独立的 `-- 注释` 行。
+2. 每个字段统一写成 `<表达式>  as <别名>  , -- <中文含义>`，其中 `as`、逗号 `,`、`--` 三处**分列纵向对齐**。
+3. 一个字段尽量**写在一行内完成**，不为「换行而换行」；只有 `case when` 这类多分支才纵向展开。
+4. **步骤注释**用简短 `-- tmp01 销售` 即可；**禁止**装饰分隔线（如 `-- ---- tmp03 广告 ----`）。
+
+<good-example>
+```sql
+select
+    a.upload_date                 as upload_date             , -- 上载批次
+    a.spu                         as spu                     , -- SPU
+    a.sales_num                   as sales_num               , -- 销量
+    '${pst_time}'                 as ws_modify_time            -- 数仓修改时间(美西时间)
+from ...
+```
+</good-example>
+
+<bad-example>
+```sql
+select
+    -- 上载批次
+    a.upload_date,
+    -- 把 coalesce 拆成好几行
+    coalesce(
+        a.sales_num,
+        0
+    ) as sales_num
+from ...
+```
+</bad-example>
+
+## 二、case when 对齐
+
+1. `case when <条件> then <值>` 尽量**一行一个分支**。
+2. 多个 `when` 纵向对齐（缩进到 `case ` 之后）；所有 `then` 纵向对齐；`then` 后的**返回值**也纵向对齐。
+3. 比较运算符对齐：`>=`、`<=`、`= `、`> `、`< ` 右侧补空格，使操作数起始列一致。
+4. `else` 关键字放在 `when` 条件所在位置，其返回值与其它 `then` 值对齐。
+5. `end` 与 `case` 同层，`end as <别名>` 参与字段对齐。
+
+<good-example>
+```sql
+    case when a1.gmv >= a2.p50_gmv and a1.profit_rate >= a2.p50_profit_rate then '明星'
+         when a1.gmv >= a2.p50_gmv and a1.profit_rate <  a2.p50_profit_rate then '现金牛'
+         when a1.gmv <  a2.p50_gmv and a1.profit_rate >= a2.p50_profit_rate then '问题'
+         when a1.gmv <  a2.p50_gmv and a1.profit_rate <  a2.p50_profit_rate then '瘦狗'
+    end                                             as matrix_flag_desc , -- 波士顿标签
+    case when a1.sales_qty >= a2.p75_sales_num then '高销量'
+         when a1.sales_qty >= a2.p40_sales_num then '中销量'
+                                               else '低销量'
+    end                                             as sales_level_desc   -- 销售层级标签
+```
+</good-example>
+
+## 三、表别名规范
+
+1. **最外层** FROM / JOIN 的表：单字母 `a` `b` `c` `d`（驱动表可用 `t`）。
+2. **子查询（派生表）内部**再引用的表：**双字母** `aa` `bb` `cc` `dd`，与外层区分，禁止内层重新从 `a` 开始造成混淆。
+3. 派生表本身的别名也遵循层级：外层派生表 `a/b/c`，其内部再嵌的派生表 `aa/bb/cc`。
+
+<good-example>
+```sql
+from      jamf_ads.xxx_tmp01 a
+left join (
+    select
+        bb.spu                         as spu   ,
+        max(bb.gmv_rate)               as gmv_rate
+    from      jamf_ads.xxx_tmp01 bb
+    inner join jamf_dis.yyy        cc on bb.spu = cc.spu
+    group by bb.spu
+) b on a.spu = b.spu
+```
+</good-example>
+
+## 四、子查询层级
+
+1. **子查询嵌套不超过两层**。逻辑更复杂时，拆成独立中间表（`_tmpNN` / `_tmpNN_xxx`）串联，而不是层层套娃。
+2. 每张中间表只做一件事，命名能自解释（如 `_tmp09_opening`、`_tmp09_arrival`）。
+
+## 五、JOIN 写法（以波士顿矩阵为准）
+
+1. `from` / `left join` / `inner join` 关键字**右侧补空格对齐**（对齐到最长关键字 `inner join` 的 10 列宽）；表名列尽量等宽，别名纵向对齐。
+2. **`on` 写在 join 同一行末尾**；多条件用 `and` **串在同一行**（波士顿习惯），不要把每个 `and` 拆成独立竖排块，除非单行过长影响阅读。
+3. 派生表收尾常见写法：`) a left join(` / `) b on a.k = b.k`，`on` 仍跟在该 join 段末尾。
+4. 无连接键的笛卡尔用 `xxx join (...) b on 1 = 1`，不写 `cross join`。
+5. **尽量不用 `full outer join`**。多源取并集时走维度建模：先 `union` 出维度骨架，再对各指标 `left join`（见第十一节）。
+
+<good-example>
+```sql
+from      jamf_ads.ads_bi_boston_matrix_analyse_info_tmp01 bb1
+left join jamf_dis.upload_boston_matrix_spu_channel        bb2 on bb1.spu = bb2.spu and bb1.channel = bb2.channel
+```
+</good-example>
+
+<good-example>
+```sql
+from(
+    select upload_date, spu from jamf_ads.xxx_tmp01 group by upload_date, spu
+) a left join(
+    select b1.spu as spu, max(b1.gmv_rate) as gmv_rate from ... b1 group by b1.spu
+) b on a.spu = b.spu
+left join(
+    select c1.spu as spu, max(c1.gmv_rate) as gmv_rate from ... c1 group by c1.spu
+) c on a.spu = c.spu
+```
+</good-example>
+
+<bad-example>
+```sql
+-- 不要把 on/and 拆成松散竖排（与波士顿样例不一致）
+left join jamf_ads.xxx b
+    on a.dt_month = b.dt_month
+   and a.shop_code = b.shop_code
+   and a.listing_sku = b.listing_sku
+```
+</bad-example>
+
+## 六、结果表写入与幂等
+
+1. **结果表（对外表）**用 `delete from <表> where <批次字段> = '${do_date}';` 再 `insert into <表>`，可重复补跑；**不使用分区**。
+2. **中间 tmp 表**用 `insert overwrite table`。
+3. Doris 的 `insert into` **不写括号列清单**，直接 `insert into <表> select ...`；靠 SELECT 的**字段顺序与表定义严格一致**来对齐（务必逐列核对顺序）。
+
+## 七、Shell 内嵌 SQL 的硬约束
+
+1. SQL 通过 `SQL_QUERY="..."` 传给 `mysql -e`，**SQL 内禁止出现 ASCII 双引号 `"`**（会截断 bash 字符串）；需要中文引号用 `『』` 或去掉。
+2. **SQL 块内禁止用 `#`**（`#` 会被 MySQL 当注释、也易与 shell 冲突）；步骤说明只用简短 `--` 行，不用装饰分隔线。
+3. 日期、批次等参数统一用 `${do_date}` / `${week_start_date}` 等 shell 变量，不硬编码。
+
+## 七-附、nvl 对齐
+
+1. `nvl` 参数之间**不加空格**：`nvl(a.sales_amt,0)`、`nvl(a.upload_date,'')`（与波士顿 `nvl(upload_date,'')` 一致）。
+2. `pkey` 拼接统一：`md5(concat(nvl(a.dt_month,''),'#',nvl(a.shop_code,''),'#',nvl(a.listing_sku,'')))`。
+3. 多个 `nvl` 出现在同一表达式时，保持紧凑书写，靠外层字段的 `as` / `,` / `--` 列对齐，不要为对齐而把单个 `nvl` 拆多行。
+
+<good-example>
+```sql
+    cast(nvl(s.sales_amt,0) - nvl(d.discount_amt,0) as decimal(18,4)) as performance_gmv , -- 业绩GMV
+    cast(nvl(s.sales_amt,0) / nullif(nvl(s.sales_qty,0),0) as decimal(18,4)) as avg_sell_price  -- 平均售价
+```
+</good-example>
+
+## 八、DDL 注释
+
+1. 表结构 DDL 以注释形式放在脚本头部（`## ` 前缀），列名 / 类型 / `DEFAULT` / `COMMENT` **分列纵向对齐**。
+2. 每张中间表、结果表都要有对应 DDL 注释，字段 COMMENT 必填。
+3. **数据模型统一用 `UNIQUE KEY`**（聚合明细 / 明细 / 结果表均用唯一主键模型），不混用 `DUPLICATE KEY`；`UNIQUE KEY` 字段即表的业务主键，保证 `insert overwrite` 与 `delete + insert` 幂等。
+4. **`UNIQUE KEY` 中的字段必须 `NOT NULL`**（Doris 硬约束，否则建表失败）；非 key 字段用 `DEFAULT NULL`。DDL 自检时务必逐字段对照 `UNIQUE KEY(...)` 列表确认。
+5. **主键模型的主键字段必须排在建表字段最前面**：`UNIQUE KEY(k1, k2, ...)` 的字段 **必须在列定义中从第 1 列开始按顺序出现**（先 k1，再 k2…），否则 Doris 建表会失败或不符合团队规范。
+6. **非上载的 ads/tmp 表** DDL 注释用 `## CREATE TABLE ...`（无 `-- ` 前缀）；**`upload_*` 上载表**保留 `##  -- CREATE TABLE ...`（引用态，非本脚本创建）。
+7. **主键统一用 `pkey`（强制）**：未来所有新表一律以单列 `pkey` 作为主键，`UNIQUE KEY(pkey)`，`pkey` 排在列定义第 1 列，类型 `varchar(32) NOT NULL`，注释写明其业务组成（如 `-- MD5(上载批次 + SPU)`）。不再用多列联合主键。
+   - **生成方式**：`pkey = md5(concat(nvl(<字段1>,''),'#',nvl(<字段2>,''), ...))`，即把构成业务粒度的字段用 `nvl(...,'')` 兜空后、以 `#` 为分隔符 `concat` 起来再 `md5`。
+   - **顺序固定**：拼接字段顺序与业务粒度定义一致，且**一旦确定不可调整**（否则历史 `pkey` 全变）；分隔符固定为 `#`，避免 `a+b` 与 `ab` 撞键。
+   - **兜空必做**：每个参与拼接的字段都要 `nvl(字段,'')`，否则任一字段为 NULL 会导致整个 `pkey` 为 NULL、写入失败。
+
+<good-example>
+```sql
+    md5(concat(nvl(a.upload_date,''),'#',nvl(a.spu,''))) as pkey , -- MD5(上载批次 + SPU)
+```
+</good-example>
+
+## 九、自检清单（产出 .sh/.sql 前逐条过）
+
+- [ ] 注释全部在行末且 `as` / `,` / `--` 对齐；步骤注释简短，无装饰分隔线
+- [ ] case when 的 when/then/值/运算符对齐，else 值对齐
+- [ ] nvl 紧凑无空格：`nvl(x,0)` / `nvl(x,'')`
+- [ ] 外层别名单字母、内层别名双字母
+- [ ] 子查询嵌套 ≤ 2 层，超了就拆中间表
+- [ ] from/left join/inner join 关键字对齐；`on ... and ...` 跟在 join 行末（波士顿写法）；无 cross join；无 full outer join
+- [ ] 多源并集先建维度再 left join 指标
+- [ ] 结果表 delete + insert into，无分区；tmp 表 insert overwrite
+- [ ] SQL 块内无 `"`、无 `#`
+- [ ] DDL 注释齐全且字段对齐（UNIQUE KEY 字段 NOT NULL 且位于列定义最前）
+- [ ] 主键统一为单列 `pkey`（`varchar(32) NOT NULL`、列定义第 1 列、`UNIQUE KEY(pkey)`），由 `md5(concat(nvl(...,''),'#',...))` 生成且每字段兜空
+
+## 十、规范总结（落地口径）
+
+- **SELECT 字段**：一行一个字段；`as` / `,` / `--` 三列对齐；字段列表中间不写独立注释行。
+- **case when**：一行一个分支；when/then/返回值/运算符对齐；else 值与 then 值对齐。
+- **nvl**：`nvl(x,0)` / `nvl(x,'')`，参数间无空格。
+- **别名**：外层 `a/b/c/d`；子查询内层 `aa/bb/cc/dd`；禁止内外层都从 `a` 开始造成歧义。
+- **子查询层级**：≤2 层；超过就拆成独立 `_tmpNN_xxx` 中间表。
+- **JOIN**：关键字对齐；`on` 在 join 行末，多条件同行 `and`；不用 `cross join`；不用 `full outer join`。
+- **维度建模**：先维度骨架，再指标 left join。
+- **写入**：tmp 表 `insert overwrite`；结果表 `delete + insert into`（不分区）；Doris `insert into` 不写列清单。
+- **Shell SQL**：SQL 块内禁 `\"`、禁 `#`；步骤注释只用简短 `--`。
+- **DDL / UNIQUE KEY**：统一 `UNIQUE KEY`；key 字段 `NOT NULL`；key 字段必须出现在列定义最前并按 key 顺序排列。
+- **主键 pkey**：未来所有新表主键统一为单列 `pkey`（`varchar(32) NOT NULL`、列定义第 1 列、`UNIQUE KEY(pkey)`），值由 `md5(concat(nvl(字段1,''),'#',nvl(字段2,''),...))` 生成，字段顺序固定、每字段 `nvl` 兜空、`#` 作分隔。
+
+## 十一、维度建模（替代 full outer join）
+
+多张事实表键不完全重叠时，**禁止**用 `full outer join` 硬拼；按以下顺序：
+
+1. **维度表（tmp01_dim）**：对各源 `select dt_month, shop_code, listing_sku ... union`（或 `union` 去重）生成骨架，并算 `pkey`。
+2. **指标表（tmp02+）**：每个主题单独聚合，只产出 `pkey` + 度量，不负责补齐缺失键。
+3. **结果表**：`from dim a left join fact_b b on a.pkey = b.pkey left join fact_c c on a.pkey = c.pkey`，度量用 `nvl(b.x,0)`。
+
+<good-example>
+```sql
+-- tmp01 维度
+insert overwrite table jamf_ads.xxx_tmp01_dim
+select md5(concat(nvl(aa.dt_month,''),'#',nvl(aa.shop_code,''),'#',nvl(aa.listing_sku,''))) as pkey , -- MD5(年月+店铺+上架SKU)
+       aa.dt_month as dt_month , aa.shop_code as shop_code , aa.listing_sku as listing_sku
+from ( select ... union select ... ) aa
+;
+
+-- 结果
+from      jamf_ads.xxx_tmp01_dim a
+left join jamf_ads.xxx_tmp02_sales b on a.pkey = b.pkey
+left join jamf_ads.xxx_tmp03_ad    c on a.pkey = c.pkey
+```
+</good-example>

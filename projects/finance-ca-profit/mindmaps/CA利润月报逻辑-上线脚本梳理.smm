@@ -1,0 +1,585 @@
+{
+    "layout": "logicalStructure",
+    "root": {
+        "data": {
+            "text": "<p>CA\u5229\u6da6\u6708\u62a5\uff5c\u4e0a\u7ebf\u811a\u672c\u903b\u8f91\u68b3\u7406</p>",
+            "uid": "a0000000-0000-4000-8000-000000000001",
+            "expand": true,
+            "richText": true,
+            "isActive": false,
+            "imgMap": {},
+            "freeNodeTrees": []
+        },
+        "children": [
+            {
+                "data": {
+                    "text": "<p>\u8fd0\u884c\u8303\u56f4\u4e0e\u7ed3\u679c\u7c92\u5ea6</p>",
+                    "uid": "a0000000-0000-4000-8000-000000000010",
+                    "expand": true,
+                    "richText": true,
+                    "isActive": false
+                },
+                "children": [
+                    {
+                        "data": {
+                            "text": "<p>\u7edf\u8ba1\u5468\u671f\uff1a${do_last_month}\uff0c\u5199\u5165 stat_month</p>",
+                            "uid": "a0000000-0000-4000-8000-000000000011",
+                            "expand": true,
+                            "richText": true,
+                            "isActive": false
+                        },
+                        "children": []
+                    },
+                    {
+                        "data": {
+                            "text": "<p>\u4e3b\u7c92\u5ea6\uff1a\u5e97\u94fa\u4ee3\u7801 \u00d7 SellerSKU\u4ee3\u7801 \u00d7 \u7edf\u8ba1\u6708\u4efd</p>",
+                            "uid": "a0000000-0000-4000-8000-000000000012",
+                            "expand": true,
+                            "richText": true,
+                            "isActive": false
+                        },
+                        "children": []
+                    },
+                    {
+                        "data": {
+                            "text": "<p>\u6267\u884c\u65b9\u5f0f\uff1a\u5148\u8ba1\u7b97 tmp01~tmp99\uff0c\u518d delete + insert \u7ed3\u679c\u8868\uff0c\u652f\u6301\u6309\u6708\u91cd\u8dd1</p>",
+                            "uid": "a0000000-0000-4000-8000-000000000013",
+                            "expand": true,
+                            "richText": true,
+                            "isActive": false
+                        },
+                        "children": []
+                    }
+                ]
+            },
+            {
+                "data": {
+                    "text": "<p>\u6a21\u5757\u4e00\uff5c\u8ba2\u5355\u6536\u5165\u4e0e\u8ba2\u5355\u5206\u7c7b\uff08tmp01\uff09</p>",
+                    "uid": "a0000000-0000-4000-8000-000000000020",
+                    "expand": true,
+                    "richText": true,
+                    "isActive": false
+                },
+                "children": [
+                    {
+                        "data": {
+                            "text": "<p>\u8ba2\u5355\u6765\u6e90\uff1aERP\u8ba2\u5355 + \u4e0a\u8f7d\u8ba2\u5355</p>",
+                            "uid": "a0000000-0000-4000-8000-000000000021",
+                            "expand": true,
+                            "richText": true,
+                            "isActive": false
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "text": "<p>tmp01_erp_order\u3001tmp01_upload_order\uff1a\u4fdd\u7559\u8ba2\u5355\u72b6\u6001\u3001\u521b\u5efa\u65f6\u95f4\u3001\u9500\u91cf\u4e0e\u9500\u552e\u91d1\u989d</p>",
+                                    "uid": "a0000000-0000-4000-8000-000000000022",
+                                    "expand": true,
+                                    "richText": true,
+                                    "isActive": false
+                                },
+                                "children": []
+                            },
+                            {
+                                "data": {
+                                    "text": "<p>tmp01_order\uff1a\u6309\u8ba2\u5355\u53f7\u5408\u5e76\u4e24\u7c7b\u8ba2\u5355\uff0c\u5f62\u6210\u5dee\u5f02\u5224\u65ad\u57fa\u7840</p>",
+                                    "uid": "a0000000-0000-4000-8000-000000000023",
+                                    "expand": true,
+                                    "richText": true,
+                                    "isActive": false
+                                },
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "data": {
+                            "text": "<p>WF\u62c6\u5355/\u5408\u5355\u8bc6\u522b\uff1atmp01_wf \u6807\u8bb0\u8ba2\u5355\u53d6\u503c\u6765\u6e90</p>",
+                            "uid": "a0000000-0000-4000-8000-000000000024",
+                            "expand": true,
+                            "richText": true,
+                            "isActive": false
+                        },
+                        "children": []
+                    },
+                    {
+                        "data": {
+                            "text": "<p>\u8ba2\u5355\u6d41\u8f6c\uff1a\u6b63\u5e38\u5df2\u53d1\u8d27\u3001\u5f80\u671f\u5f85\u53d1\u8d27\u672c\u671f\u53d1\u8d27\u3001\u5f02\u5e38\u8ba2\u5355\uff1b\u5f02\u5e38\u8ba2\u5355\u4ece\u5386\u53f2\u6c603\u53c2\u4e0e\u5904\u7406</p>",
+                            "uid": "a0000000-0000-4000-8000-000000000025",
+                            "expand": true,
+                            "richText": true,
+                            "isActive": false
+                        },
+                        "children": []
+                    },
+                    {
+                        "data": {
+                            "text": "<p>tmp01_promot\uff1a\u8865\u5145\u4fc3\u9500\uff1btmp01_result\uff1a\u5f62\u6210\u6708\u5ea6\u6536\u5165\u8ba2\u5355\u660e\u7ec6</p>",
+                            "uid": "a0000000-0000-4000-8000-000000000026",
+                            "expand": true,
+                            "richText": true,
+                            "isActive": false
+                        },
+                        "children": []
+                    }
+                ]
+            },
+            {
+                "data": {
+                    "text": "<p>\u6a21\u5757\u4e8c\uff5c\u8d44\u6e90\u6c60\u7ef4\u62a4\uff08\u72ec\u7acb resource_pool \u811a\u672c\uff09</p>",
+                    "uid": "a0000000-0000-4000-8000-000000000030",
+                    "expand": true,
+                    "richText": true,
+                    "isActive": false
+                },
+                "children": [
+                    {
+                        "data": {
+                            "text": "<p>\u6c601\uff1a\u6b63\u5e38\u8ba2\u5355\u5386\u53f2\u6c60\uff5c\u5e97\u94fa + SellerSKU + \u5e73\u53f0\u8ba2\u5355\u53f7\uff1b\u4fdd\u7559\u672a\u56de\u6b3e\u8ba2\u5355\u7684\u9884\u4f30\u8d26\u671f\u8d39/\u4f63\u91d1</p>",
+                            "uid": "a0000000-0000-4000-8000-000000000031",
+                            "expand": true,
+                            "richText": true,
+                            "isActive": false
+                        },
+                        "children": []
+                    },
+                    {
+                        "data": {
+                            "text": "<p>\u6c602\uff1a\u6b63\u5e38\u8ba2\u5355\u5386\u53f2\u6c60\uff5c\u5e97\u94fa + SellerSKU\uff1b\u7528\u4e8e\u4fc3\u9500\u3001\u5e7f\u544a\u7b49\u8de8\u671f\u8c03\u6574</p>",
+                            "uid": "a0000000-0000-4000-8000-000000000032",
+                            "expand": true,
+                            "richText": true,
+                            "isActive": false
+                        },
+                        "children": []
+                    },
+                    {
+                        "data": {
+                            "text": "<p>\u6c603\uff1a\u5f02\u5e38\u8ba2\u5355\u5386\u53f2\u6c60\uff5c\u5e97\u94fa + SellerSKU + \u5e73\u53f0\u8ba2\u5355\u53f7\uff1b\u8bb0\u5f55\u5f02\u5e38\u5904\u7406\u72b6\u6001</p>",
+                            "uid": "a0000000-0000-4000-8000-000000000033",
+                            "expand": true,
+                            "richText": true,
+                            "isActive": false
+                        },
+                        "children": []
+                    },
+                    {
+                        "data": {
+                            "text": "<p>\u6c604\uff1a\u975e\u8865\u53d1\u5feb\u9012\u8d39\u5386\u53f2\u6c60\uff5c\u5e97\u94fa + \u5355\u7bb1SKU + SellerSKU + \u5e73\u53f0\u8ba2\u5355\u53f7 + \u5ba2\u6237\u5355\u53f7</p>",
+                            "uid": "a0000000-0000-4000-8000-000000000034",
+                            "expand": true,
+                            "richText": true,
+                            "isActive": false
+                        },
+                        "children": []
+                    },
+                    {
+                        "data": {
+                            "text": "<p>\u6c605\uff1a\u8865\u53d1\u5feb\u9012\u8d39\u5386\u53f2\u6c60\uff5c\u4e0e\u6c604\u540c\u7c92\u5ea6\uff0c\u5355\u72ec\u6c89\u6dc0\u8865\u53d1\u8ba2\u5355\u6210\u672c</p>",
+                            "uid": "a0000000-0000-4000-8000-000000000035",
+                            "expand": true,
+                            "richText": true,
+                            "isActive": false
+                        },
+                        "children": []
+                    },
+                    {
+                        "data": {
+                            "text": "<p>\u6bcf\u4e2a\u8d44\u6e90\u6c60\u5747\u7ef4\u62a4\u5f53\u671f\u6c60\u4e0e\u5907\u4efd\u6c60\uff1b\u4e3b\u811a\u672c\u8bfb\u53d6\u5386\u53f2\u6570\u636e\u5b8c\u6210\u8de8\u671f\u5dee\u5f02\u5f52\u5c5e</p>",
+                            "uid": "a0000000-0000-4000-8000-000000000036",
+                            "expand": true,
+                            "richText": true,
+                            "isActive": false
+                        },
+                        "children": []
+                    },
+                    {
+                        "data": {
+                            "text": "<p>\u671f\u521d\u6570\u636e\uff1d\u5207\u6362\u6708\u4e4b\u524d\u5c1a\u672a\u95ed\u73af\u7684\u8d44\u6e90\u6c60\u8bb0\u5f55\uff0c\u4e0d\u662f\u7ed3\u679c\u8868\u4e2d\u7684\u5355\u72ec\u671f\u521d\u4f59\u989d</p>",
+                            "uid": "a0000000-0000-4000-8000-000000000037",
+                            "expand": true,
+                            "richText": true,
+                            "isActive": false
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "text": "<p>\u4e3b\u811a\u672c\u8bfb\u53d6\uff1a\u6c601\u672a\u56de\u6b3e\u8ba2\u5355\u3001\u6c603\u672a\u5904\u7406\u5f02\u5e38\u8ba2\u5355\u3001\u6c604/\u6c605\u672a\u56de\u6b3e\u5feb\u9012\u8d26\u5355\uff0c\u4ee5\u53ca\u6c602\u524d\u4e24\u6708\u4fc3\u9500\u8c03\u6574\u6570\u636e</p>",
+                                    "uid": "a0000000-0000-4000-8000-000000000038",
+                                    "expand": true,
+                                    "richText": true,
+                                    "isActive": false
+                                },
+                                "children": []
+                            },
+                            {
+                                "data": {
+                                    "text": "<p>\u63a8\u8350\u521d\u59cb\u5316\uff1a\u4ece\u6700\u65e9\u9700\u8981\u8ffd\u6eaf\u7684\u6708\u4efd\u5f00\u59cb\uff0c\u6309\u6708\u4f9d\u6b21\u8fd0\u884c\u4e3b\u811a\u672c\u4e0e\u8d44\u6e90\u6c60\u811a\u672c\uff0c\u56de\u704c\u5f62\u6210\u671f\u521d\u8d44\u6e90\u6c60</p>",
+                                    "uid": "a0000000-0000-4000-8000-000000000039",
+                                    "expand": true,
+                                    "richText": true,
+                                    "isActive": false
+                                },
+                                "children": []
+                            },
+                            {
+                                "data": {
+                                    "text": "<p>\u65e0\u6cd5\u56de\u704c\u65f6\uff1a\u4ee5\u5207\u6362\u6708\u524d\u4e00\u65e5\u4e3a\u65f6\u70b9\uff0c\u6309\u5404\u6c60\u4e1a\u52a1\u4e3b\u952e\u704c\u5165\u672a\u56de\u6b3e\u3001\u672a\u5904\u7406\u3001\u672a\u5339\u914d\u4e8b\u9879\uff1b\u9700\u4fdd\u7559 stat_month\u3001\u72b6\u6001\u6807\u8bb0\u53ca\u91d1\u989d\u5b57\u6bb5</p>",
+                                    "uid": "a0000000-0000-4000-8000-00000000003a",
+                                    "expand": true,
+                                    "richText": true,
+                                    "isActive": false
+                                },
+                                "children": []
+                            },
+                            {
+                                "data": {
+                                    "text": "<p>\u4e0d\u53ef\u628a\u5386\u53f2\u5df2\u95ed\u73af\u4e8b\u9879\u4f5c\u4e3a\u671f\u521d\u704c\u5165\uff0c\u5426\u5219\u56de\u6b3e\u3001\u5feb\u9012\u8d39\u6216\u5f02\u5e38\u8ba2\u5355\u4f1a\u5728\u5207\u6362\u6708\u91cd\u590d\u5f52\u96c6</p>",
+                                    "uid": "a0000000-0000-4000-8000-00000000003b",
+                                    "expand": true,
+                                    "richText": true,
+                                    "isActive": false
+                                },
+                                "children": []
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "data": {
+                    "text": "<p>\u6a21\u5757\u4e09\uff5c\u5e73\u53f0\u56de\u6b3e\u4e0e\u8425\u9500\u8d39\u7528\u5f52\u96c6</p>",
+                    "uid": "a0000000-0000-4000-8000-000000000040",
+                    "expand": true,
+                    "richText": true,
+                    "isActive": false
+                },
+                "children": [
+                    {
+                        "data": {
+                            "text": "<p>CA-VC\uff08tmp03\uff09\uff1a\u8ba2\u5355\u56de\u6b3e\u3001\u4f63\u91d1\u3001\u4fc3\u9500\u3001\u9000\u6b3e\u3001\u5e7f\u544a\u8d39</p>",
+                            "uid": "a0000000-0000-4000-8000-000000000041",
+                            "expand": true,
+                            "richText": true,
+                            "isActive": false
+                        },
+                        "children": []
+                    },
+                    {
+                        "data": {
+                            "text": "<p>CA-WM\uff08tmp04\uff09\uff1a\u8ba2\u5355\u56de\u6b3e\u3001\u9000\u6b3e\u3001\u56fa\u5b9a\u8425\u9500\u8d39\u3001\u4f63\u91d1\u8c03\u6574\u3001\u8865\u8d34\u6536\u5165\u3001\u5e7f\u544a\u8d39</p>",
+                            "uid": "a0000000-0000-4000-8000-000000000042",
+                            "expand": true,
+                            "richText": true,
+                            "isActive": false
+                        },
+                        "children": []
+                    },
+                    {
+                        "data": {
+                            "text": "<p>CA-WF\uff08tmp05\uff09\uff1a\u8ba2\u5355\u56de\u6b3e\u4e0e\u9000\u6b3e</p>",
+                            "uid": "a0000000-0000-4000-8000-000000000043",
+                            "expand": true,
+                            "richText": true,
+                            "isActive": false
+                        },
+                        "children": []
+                    },
+                    {
+                        "data": {
+                            "text": "<p>tmp07\uff1a\u5f52\u96c6\u5e73\u53f0\u56de\u6b3e\u4e0e\u9884\u8ba1\u4fc3\u9500\uff1btmp10\uff1a\u8f93\u51fa\u4fc3\u9500\u8c03\u6574\u3001\u9000\u6b3e\u3001\u5e7f\u544a\u8d39\u53ca\u56fa\u5b9a\u8425\u9500\u8d39</p>",
+                            "uid": "a0000000-0000-4000-8000-000000000044",
+                            "expand": true,
+                            "richText": true,
+                            "isActive": false
+                        },
+                        "children": []
+                    }
+                ]
+            },
+            {
+                "data": {
+                    "text": "<p>\u6a21\u5757\u56db\uff5c\u5feb\u9012\u8d39\u4e0e\u4ea7\u54c1\u6210\u672c\u5f52\u96c6</p>",
+                    "uid": "a0000000-0000-4000-8000-000000000050",
+                    "expand": true,
+                    "richText": true,
+                    "isActive": false
+                },
+                "children": [
+                    {
+                        "data": {
+                            "text": "<p>tmp02_shipping_payment\uff1a\u8d26\u5355\u4fa7\u5feb\u9012\u8d39\uff1btmp02_shipping_order\uff1a\u8ba2\u5355\u4fa7\u5feb\u9012\u8d39\u53ca\u4ea7\u54c1\u6210\u672c</p>",
+                            "uid": "a0000000-0000-4000-8000-000000000051",
+                            "expand": true,
+                            "richText": true,
+                            "isActive": false
+                        },
+                        "children": []
+                    },
+                    {
+                        "data": {
+                            "text": "<p>\u6210\u672c\u9879\uff1aDDP\u3001FOB\u3001\u6d77\u8fd0\u8d39\u3001\u5934\u7a0b\u7269\u6d41\u8d39\u3001\u4ea7\u54c1\u5173\u7a0e\u3001\u5165\u5e93\u8d39\u3001\u5feb\u9012\u8d39</p>",
+                            "uid": "a0000000-0000-4000-8000-000000000052",
+                            "expand": true,
+                            "richText": true,
+                            "isActive": false
+                        },
+                        "children": []
+                    },
+                    {
+                        "data": {
+                            "text": "<p>tmp08\uff1a\u5339\u914d\u8d26\u5355\u4e0e\u8ba2\u5355\uff0c\u8bc6\u522b\u672c\u671f/\u5386\u53f2/\u591a\u4f59\u5feb\u9012\u6570\u636e\uff0c\u5e76\u533a\u5206\u8865\u53d1\u4e0e\u975e\u8865\u53d1</p>",
+                            "uid": "a0000000-0000-4000-8000-000000000053",
+                            "expand": true,
+                            "richText": true,
+                            "isActive": false
+                        },
+                        "children": []
+                    },
+                    {
+                        "data": {
+                            "text": "<p>tmp11\uff1a\u7ed3\u5408\u6c604\u3001\u6c605\u5b8c\u6210\u975e\u8865\u53d1\u4e0e\u8865\u53d1\u7684\u5386\u53f2\u5feb\u9012\u8d39/\u4ea7\u54c1\u6210\u672c\u5f52\u96c6</p>",
+                            "uid": "a0000000-0000-4000-8000-000000000054",
+                            "expand": true,
+                            "richText": true,
+                            "isActive": false
+                        },
+                        "children": []
+                    }
+                ]
+            },
+            {
+                "data": {
+                    "text": "<p>\u6a21\u5757\u4e94\uff5c\u5229\u6da6\u53e3\u5f84\u6c47\u603b</p>",
+                    "uid": "a0000000-0000-4000-8000-000000000060",
+                    "expand": true,
+                    "richText": true,
+                    "isActive": false
+                },
+                "children": [
+                    {
+                        "data": {
+                            "text": "<p>tmp09\uff1a\u9500\u552e\u3001\u8d26\u671f\u8d39\u3001\u4f63\u91d1\u3001\u4fc3\u9500\u3001\u9000\u6b3e\u3001\u8865\u8d34\u6536\u5165</p>",
+                            "uid": "a0000000-0000-4000-8000-000000000061",
+                            "expand": true,
+                            "richText": true,
+                            "isActive": false
+                        },
+                        "children": []
+                    },
+                    {
+                        "data": {
+                            "text": "<p>tmp99\uff1a\u6309\u5e97\u94fa \u00d7 SellerSKU \u00d7 \u6708\u4efd\u62fc\u63a5\u6536\u5165\u3001\u8425\u9500\u8d39\u7528\u3001\u6210\u672c\u3001\u552e\u540e\u4e0e\u7ef4\u5ea6\u4fe1\u606f</p>",
+                            "uid": "a0000000-0000-4000-8000-000000000062",
+                            "expand": true,
+                            "richText": true,
+                            "isActive": false
+                        },
+                        "children": []
+                    },
+                    {
+                        "data": {
+                            "text": "<p>\u4e1a\u7ee9GMV = \u9500\u552e\u91d1\u989d \u2212 \u4fc3\u9500\u91d1\u989d</p>",
+                            "uid": "a0000000-0000-4000-8000-000000000063",
+                            "expand": true,
+                            "richText": true,
+                            "isActive": false
+                        },
+                        "children": []
+                    },
+                    {
+                        "data": {
+                            "text": "<p>\u8425\u9500\u8d39\u7528\u5408\u8ba1 = \u56fa\u5b9a\u8425\u9500\u8d39 + \u5e7f\u544a\u8d39</p>",
+                            "uid": "a0000000-0000-4000-8000-000000000064",
+                            "expand": true,
+                            "richText": true,
+                            "isActive": false
+                        },
+                        "children": []
+                    },
+                    {
+                        "data": {
+                            "text": "<p>\u5e73\u53f0\u4f63\u91d1\u5408\u8ba1 = \u4f63\u91d1 \u2212 \u4f63\u91d1\u9000\u56de</p>",
+                            "uid": "a0000000-0000-4000-8000-00000000006c",
+                            "expand": true,
+                            "richText": true,
+                            "isActive": false
+                        },
+                        "children": []
+                    },
+                    {
+                        "data": {
+                            "text": "<p>\u6d3e\u9001\u8d39/\u64cd\u4f5c\u8d39\u5408\u8ba1 = \u51fa\u5e93\u5904\u7406\u8d39 + \u5c3e\u7a0b\u5feb\u9012\u8d39</p>",
+                            "uid": "a0000000-0000-4000-8000-000000000065",
+                            "expand": true,
+                            "richText": true,
+                            "isActive": false
+                        },
+                        "children": []
+                    },
+                    {
+                        "data": {
+                            "text": "<p>\u552e\u540e\u603b\u652f\u51fa = \u8865\u53d1\u4ea7\u54c1\u6210\u672c + \u8865\u53d1\u8fd0\u8d39 + \u5e73\u53f0\u9000\u6b3e</p>",
+                            "uid": "a0000000-0000-4000-8000-00000000006d",
+                            "expand": true,
+                            "richText": true,
+                            "isActive": false
+                        },
+                        "children": []
+                    },
+                    {
+                        "data": {
+                            "text": "<p>\u5229\u6da6 = \u4e1a\u7ee9GMV \u2212 \u8425\u9500\u8d39\u7528\u5408\u8ba1 + \u8865\u8d34\u6536\u5165 \u2212 \u6d3e\u9001\u8d39/\u64cd\u4f5c\u8d39\u5408\u8ba1 \u2212 \u8d26\u671f\u8d39 \u2212 \u5e73\u53f0\u4f63\u91d1\u5408\u8ba1 \u2212 \u552e\u540e\u603b\u652f\u51fa \u2212 \u5e97\u94fa\u79df\u91d1 \u2212 \u4ea7\u54c1\u6210\u672c\u5408\u8ba1 + \u7d22\u8d54 \u2212 \u5237\u5355\u8d39\u7528</p>",
+                            "uid": "a0000000-0000-4000-8000-000000000066",
+                            "expand": true,
+                            "richText": true,
+                            "isActive": false
+                        },
+                        "children": []
+                    },
+                    {
+                        "data": {
+                            "text": "<p>\u5229\u6da6\u7387 = \u5229\u6da6 \u00f7 \u4e1a\u7ee9GMV</p>",
+                            "uid": "a0000000-0000-4000-8000-000000000067",
+                            "expand": true,
+                            "richText": true,
+                            "isActive": false
+                        },
+                        "children": []
+                    },
+                    {
+                        "data": {
+                            "text": "<p>\u4ea7\u54c1\u6210\u672c\u5408\u8ba1 = DDP\u6210\u672c</p>",
+                            "uid": "a0000000-0000-4000-8000-000000000068",
+                            "expand": true,
+                            "richText": true,
+                            "isActive": false
+                        },
+                        "children": []
+                    },
+                    {
+                        "data": {
+                            "text": "<p>DDP\u6210\u672c = FOB\u6210\u672c + \u6d77\u8fd0\u8d39 + \u4ea7\u54c1\u5173\u7a0e + \u5934\u7a0b\u7269\u6d41\u8d39 + \u5165\u5e93\u8d39</p>",
+                            "uid": "10b6c58f-ce7a-4aef-8186-61a45b28ce87",
+                            "expand": true,
+                            "richText": true,
+                            "isActive": false
+                        },
+                        "children": []
+                    },
+                    {
+                        "data": {
+                            "text": "<p>\u4e94\u9879\u6210\u672c\u901a\u8fc7 DDP \u95f4\u63a5\u8fdb\u5165\u5229\u6da6\uff0c\u4e0d\u80fd\u518d\u91cd\u590d\u6263\u51cf</p>",
+                            "uid": "a0000000-0000-4000-8000-00000000006e",
+                            "expand": true,
+                            "richText": true,
+                            "isActive": false
+                        },
+                        "children": []
+                    },
+                    {
+                        "data": {
+                            "text": "<p>\u6570\u636e\u6838\u9a8c\uff1aDDP\u4e0e\u4e94\u9879\u6210\u672c\u5728\u6708\u5ea6\u6c47\u603b\u4e0a\u57fa\u672c\u4e00\u81f4\uff1b\u4f46\u539f\u59cb\u6210\u672c\u8868\u5df2\u5b58\u5728\u975e\u96f6\u5dee\u989d\uff0c\u4e0d\u662f\u4e0b\u6e38\u4fdd\u7559\u5c0f\u6570\u9020\u6210</p>",
+                            "uid": "a0000000-0000-4000-8000-000000000069",
+                            "expand": true,
+                            "richText": true,
+                            "isActive": false
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "text": "<p>\u5df2\u6838\u9a8c\u539f\u59cb\u8868 jamf_dis.upload_bi_outbound_cost_sheet_di\uff1a2026-06 \u7684 SHX1539-GR\uff0cDDP=99.6301\uff0c\u4e94\u9879\u6210\u672c\u548c=98.8657\uff0c\u5dee\u989d=0.7644</p>",
+                                    "uid": "a0000000-0000-4000-8000-00000000006a",
+                                    "expand": true,
+                                    "richText": true,
+                                    "isActive": false
+                                },
+                                "children": []
+                            },
+                            {
+                                "data": {
+                                    "text": "<p>\u7ed3\u679c\u8868\u6700\u5927\u5dee\u989d 6.1152 = \u539f\u59cb\u5dee\u989d 0.7644 \u00d7 8\uff0c\u7cfb\u8ba2\u5355/\u5305\u88f9\u5f52\u96c6\u653e\u5927\uff1b\u5e94\u4fee\u6b63\u539f\u59cb\u6210\u672c\u6216\u660e\u786e\u65b0\u589e\u6b8b\u5dee\u6210\u672c\u9879</p>",
+                                    "uid": "a0000000-0000-4000-8000-00000000006b",
+                                    "expand": true,
+                                    "richText": true,
+                                    "isActive": false
+                                },
+                                "children": []
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "data": {
+                    "text": "<p>\u6a21\u5757\u516d\uff5c\u6700\u7ec8\u7ed3\u679c\u8868\u4e0e\u5ba1\u8ba1\u70b9</p>",
+                    "uid": "a0000000-0000-4000-8000-000000000070",
+                    "expand": true,
+                    "richText": true,
+                    "isActive": false
+                },
+                "children": [
+                    {
+                        "data": {
+                            "text": "<p>\u76ee\u6807\u8868\uff1ajamf_ads.ads_bi_finance_ca_profit_month_info</p>",
+                            "uid": "a0000000-0000-4000-8000-000000000071",
+                            "expand": true,
+                            "richText": true,
+                            "isActive": false
+                        },
+                        "children": []
+                    },
+                    {
+                        "data": {
+                            "text": "<p>\u7ef4\u5ea6\uff1a\u8d22\u5e74\u3001\u8d22\u5b63\u3001\u7edf\u8ba1\u6708\u3001\u5e97\u94fa\u7c7b\u578b\u3001\u5e97\u94fa\u3001SellerSKU\u3001MSKU\u3001\u5206\u7c7b\u3001\u4ea7\u54c1\u7b49\u7ea7\u3001\u8fd0\u8425\u4eba\u5458</p>",
+                            "uid": "a0000000-0000-4000-8000-000000000072",
+                            "expand": true,
+                            "richText": true,
+                            "isActive": false
+                        },
+                        "children": []
+                    },
+                    {
+                        "data": {
+                            "text": "<p>\u5199\u5165\u524d\u5220\u9664\u540c stat_month \u6570\u636e\uff0c\u518d\u5199\u5165\u672c\u6708\u7ed3\u679c\uff1b\u8d44\u6e90\u6c60\u811a\u672c\u7ef4\u62a4\u8de8\u6708\u53ef\u8ffd\u6eaf\u6570\u636e</p>",
+                            "uid": "a0000000-0000-4000-8000-000000000073",
+                            "expand": true,
+                            "richText": true,
+                            "isActive": false
+                        },
+                        "children": []
+                    }
+                ]
+            }
+        ]
+    },
+    "theme": {
+        "template": "greenLeaf",
+        "config": {}
+    },
+    "view": {
+        "transform": {
+            "scaleX": 1,
+            "scaleY": 1,
+            "shear": 0,
+            "rotate": 0,
+            "translateX": -1127,
+            "translateY": -434,
+            "originX": 0,
+            "originY": 0,
+            "a": 1,
+            "b": 0,
+            "c": 0,
+            "d": 1,
+            "e": -1127,
+            "f": -434
+        },
+        "state": {
+            "scale": 1,
+            "x": -1127,
+            "y": -434,
+            "sx": -1127,
+            "sy": -434
+        }
+    }
+}

@@ -1,0 +1,7 @@
+.codex/config.toml
+__pycache__/
+_generated/
+graphify-out/
+_tools/
+.superpowers/
+tmp/
