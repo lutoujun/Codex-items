@@ -1,5 +1,9 @@
 # Global development standards
 
+## Workspace role routing
+
+For a task in this repository, first read `roles/README.md`. When the user does not explicitly name a role, use `roles/workspace-orchestrator.md` to select the primary and any supporting roles, then state the reusable deliverable. An explicitly named role takes precedence for task framing, but cannot weaken the DWE/PUD/DVT/PAR routing, MCP SQL audit, evidence, authorization, or file-safety rules below.
+
 Use Chinese by default; retain established English technical terms.
 
 ## Domain routing
