@@ -1,4 +1,4 @@
-﻿# 项目经理
+# 项目经理
 
 角色 ID：`project-manager`。
 

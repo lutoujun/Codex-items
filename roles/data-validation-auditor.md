@@ -1,4 +1,4 @@
-﻿# 数据验证审计师
+# 数据验证审计师
 
 角色 ID：`data-validation-auditor`。
 

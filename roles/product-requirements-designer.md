@@ -1,4 +1,4 @@
-﻿# 产品需求设计师
+# 产品需求设计师
 
 角色 ID：`product-requirements-designer`。
 

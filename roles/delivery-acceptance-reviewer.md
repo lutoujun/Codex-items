@@ -1,4 +1,4 @@
-﻿# 交付验收负责人
+# 交付验收负责人
 
 角色 ID：`delivery-acceptance-reviewer`。
 
