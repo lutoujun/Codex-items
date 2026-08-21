@@ -13,6 +13,7 @@
 | `_generated/` | 可再生成产物 | Python 缓存等不需要人工维护的内容。 |
 | `audit/mcp-sql/` | MCP SQL 审计 | 以 JSONL 追加记录 MCP SQL 调用。 |
 | `graphify-out/` | 工具生成物 | Graphify 固定输出路径；可重新生成，不纳入版本控制。 |
+| `roles/` | 工作台角色库 | 精选角色、默认路由和使用说明；不包含外部 Agent 工具或凭据。 |
 
 ## 维护方式
 
